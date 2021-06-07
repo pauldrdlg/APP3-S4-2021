@@ -1,0 +1,69 @@
+* D:\Git\APP3-S4-2021\S4iAPP3_prob\add3b_test.asc
+XU1 o1 o2 o3 out Bin2Dec Vhigh={vv}
+XU2 b N004 N005 N006 Dec2Bin Vhigh={vv}
+XU3 a N001 N002 N003 Dec2Bin Vhigh={vv}
+V1 vss 0 1.8
+Va a 0 3
+Vb b 0 3
+Vsel sel 0 1.8
+XX1 vss N001 N002 N003 N004 N005 N006 0 o1 o2 o3 cout 0 add3b
+
+* block symbol definitions
+.subckt add3b vdd a1 a2 a3 b1 b2 b3 vss o1 o2 o3 cout cin
+XX1 cin a1 b1 o1 N001 vdd vss add1b
+XX2 N001 a2 b2 o2 N002 vdd vss add1b
+XX3 N002 a3 b3 o3 cout vdd vss add1b
+.ends add3b
+
+.subckt add1b cin a b s cout Vdd Vss
+XX1 cin N001 Vdd Vss a xor params: XOR ll=180n wn={nnw} wp={nnw*mp}
+XX2 N001 s Vdd Vss b xor params: XOR ll=180n wn={nnw} wp={nnw*mp}
+XX3 a N002 Vdd Vss b nand params: NAND ll=180n wn={nnw} wp={nnw*mp}
+XX4 a N005 Vdd Vss cin nand params: NAND ll=180n wn={nnw} wp={nnw*mp}
+XX5 b N006 Vdd Vss cin nand params: NAND ll=180n wn={nnw} wp={nnw*mp}
+XX6 N002 N003 Vdd Vss N005 nand params: NAND ll=180n wn={nnw} wp={nnw*mp}
+XX7 N004 cout Vdd Vss N006 nand params: NAND ll=180n wn={nnw} wp={nnw*mp}
+XX8 N003 N004 Vdd Vss inv params: ll=180n wn={nnw} wp={nnw*mp}
+.param vv=1.8 nnw=8*180n mp=1
+.lib BU_180nm.lib
+.ends add1b
+
+.subckt xor in1 Q vdd vss in2
+M3 N004 in1 Q vdd PMOS l={ll} w={wp} ad={450n*{wp}} as={450n*{wp}} pd={900n+{wp}} ps={1080n+{wp}}
+M4 vdd N002 N004 vdd PMOS l={ll} w={wp} ad={450n*{wp}} as={450n*{wp}} pd={900n+{wp}} ps={1080n+{wp}}
+M5 vdd N001 N003 vdd PMOS l={ll} w={wp} ad={450n*{wp}} as={450n*{wp}} pd={900n+{wp}} ps={1080n+{wp}}
+M6 N005 N002 vss vss NMOS l={ll} w={wn} ad={450n*{wn}} as={450n*{wn}} pd={900n+{wn}} ps={1080n+{wn}}
+M7 Q in2 N005 vss NMOS l={ll} w={wn} ad={450n*{wn}} as={450n*{wn}} pd={900n+{wn}} ps={1080n+{wn}}
+M8 N005 in1 vss vss NMOS l={ll} w={wn} ad={450n*{wn}} as={450n*{wn}} pd={900n+{wn}} ps={1080n+{wn}}
+XX1 in1 N001 vdd vss inv params: ll=180n wn={nnw} wp={nnw*mp}
+XX2 in2 N002 vdd vss inv params: ll=180n wn={nnw} wp={nnw*mp}
+M1 Q N001 N005 vss NMOS l={ll} w={wn} ad={450n*{wn}} as={450n*{wn}} pd={900n+{wn}} ps={1080n+{wn}}
+M2 N003 in2 Q vdd PMOS l={ll} w={wp} ad={450n*{wp}} as={450n*{wp}} pd={900n+{wp}} ps={1080n+{wp}}
+.lib BU_180nm.lib
+.ends xor
+
+.subckt nand in1 Q vdd vss in2
+M1 vdd in1 Q vdd PMOS l={ll} w={wp} ad={450n*{wp}} as={450n*{wp}} pd={900n+{wp}} ps={1080n+{wp}}
+M2 Q in1 P001 vss NMOS l={ll} w={wn} ad={450n*{wn}} as={450n*{wn}} pd={900n+{wn}} ps={1080n+{wn}}
+M3 vdd in2 Q vdd PMOS l={ll} w={wp} ad={450n*{wp}} as={450n*{wp}} pd={900n+{wp}} ps={1080n+{wp}}
+M4 P001 in2 vss vss NMOS l={ll} w={wn} ad={450n*{wn}} as={450n*{wn}} pd={900n+{wn}} ps={1080n+{wn}}
+.lib BU_180nm.lib
+.ends nand
+
+.subckt inv In _Q vdd vss
+M1 _Q In vss vss NMOS l={ll} w={wn} ad={450n*{wn}} as={450n*{wn}} pd={900n+{wn}} ps={1080n+{wn}}
+M2 vdd In _Q vdd PMOS l={ll} w={wp} ad={450n*{wp}} as={450n*{wp}} pd={900n+{wp}} ps={1080n+{wp}}
+.lib BU_180nm.lib
+.ends inv
+
+.model NMOS NMOS
+.model PMOS PMOS
+.lib C:\Users\Olivier\Documents\LTspiceXVII\lib\cmp\standard.mos
+.param vv=1.8 nnw=180n mp=1
+.lib BU_180nm.lib
+.op
+.dc va 0 7 1
+.lib Bin2Dec.sub
+.lib Dec2Bin.sub
+.backanno
+.end
