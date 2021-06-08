@@ -2,30 +2,30 @@ Circuit: * C:\Users\Utilisateur\Documents\GitHub Repository\APP3-S4-2021\S4iAPP3
 
 Direct Newton iteration for .op point succeeded.
 
-t1: time=3.01566e-009 at 3.01566e-009
-t2: time=3.10801e-009 at 3.10801e-009
-t3: time=2.05585e-009 at 2.05585e-009
-t4: time=2.00913e-009 at 2.00913e-009
-transition_up: abs(t2-t1)=9.23513e-011
-transition_down: abs(t4-t3)=4.67194e-011
+t1: time=3.00977e-009 at 3.00977e-009
+t2: time=3.06857e-009 at 3.06857e-009
+t3: time=2.08341e-009 at 2.08341e-009
+t4: time=2.01599e-009 at 2.01599e-009
+transition_up: abs(t2-t1)=5.87927e-011
+transition_down: abs(t4-t3)=6.74209e-011
 
 Measurement "ratio" FAIL'ed
 
 
-Date: Mon Jun 07 10:06:53 2021
-Total elapsed time: 0.130 seconds.
+Date: Tue Jun 08 14:46:31 2021
+Total elapsed time: 0.153 seconds.
 
 tnom = 27
 temp = 27
 method = modified trap
-totiter = 2704
-traniter = 2699
-tranpoints = 1283
-accept = 1208
-rejected = 75
+totiter = 2770
+traniter = 2764
+tranpoints = 1310
+accept = 1227
+rejected = 83
 matrix size = 8
 fillins = 0
 solver = Normal
-Matrix Compiler1: 282 bytes object code size  0.1/0.0/[0.0]
-Matrix Compiler2: 642 bytes object code size  0.1/0.1/[0.0]
+Matrix Compiler1: 282 bytes object code size  0.1/0.1/[0.0]
+Matrix Compiler2: 642 bytes object code size  0.1/0.1/[0.1]
 

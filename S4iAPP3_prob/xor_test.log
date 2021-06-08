@@ -1,32 +1,31 @@
-Circuit: * D:\Git\APP3-S4-2021\S4iAPP3_prob\xor_test.asc
+Circuit: * C:\Users\Utilisateur\Documents\GitHub Repository\APP3-S4-2021\S4iAPP3_prob\xor_test.asc
 
-Warning: Multiple definitions of model "aons66402" Type: Vdmos1
 Direct Newton iteration for .op point succeeded.
 
-t1: time=1.0991e-009 at 1.0991e-009
-t2: time=1.51967e-009 at 1.51967e-009
-t3: time=2.13867e-009 at 2.13867e-009
-t4: time=2.02884e-009 at 2.02884e-009
-transition_up: abs(t2-t1)=4.20568e-010
-transition_down: abs(t4-t3)=1.09829e-010
+t1: time=1.00092e-009 at 1.00092e-009
+t2: time=1.21627e-009 at 1.21627e-009
+t3: time=1.00271e-009 at 1.00271e-009
+t4: time=2.02862e-009 at 2.02862e-009
+transition_up: abs(t2-t1)=2.15355e-010
+transition_down: abs(t4-t3)=1.02592e-009
 
 Measurement "ratio" FAIL'ed
 
 
-Date: Mon Jun 07 11:12:17 2021
-Total elapsed time: 0.142 seconds.
+Date: Tue Jun 08 14:53:01 2021
+Total elapsed time: 0.201 seconds.
 
 tnom = 27
 temp = 27
 method = modified trap
-totiter = 2616
-traniter = 2598
-tranpoints = 1244
-accept = 1177
-rejected = 67
+totiter = 2794
+traniter = 2774
+tranpoints = 1303
+accept = 1225
+rejected = 78
 matrix size = 12
 fillins = 2
 solver = Normal
-Matrix Compiler1: 1000 bytes object code size  0.2/0.1/[0.1]
-Matrix Compiler2: off  [0.1]/0.1/0.1
+Matrix Compiler1: 1000 bytes object code size  0.2/0.2/[0.1]
+Matrix Compiler2: 1.30 KB object code size  0.1/0.2/[0.1]
 
