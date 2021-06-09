@@ -4,30 +4,30 @@ WARNING: Node X1:N001 is floating.
 
 Direct Newton iteration for .op point succeeded.
 
-t1: time=4.0233e-009 at 4.0233e-009
-t2: time=4.11503e-009 at 4.11503e-009
-t3: time=1.06037e-009 at 1.06037e-009
-t4: time=1.01202e-009 at 1.01202e-009
-transition_up: abs(t2-t1)=9.17285e-011
-transition_down: abs(t4-t3)=4.83509e-011
+t1: time=4.01975e-009 at 4.01975e-009
+t2: time=4.10123e-009 at 4.10123e-009
+t3: time=1.10185e-009 at 1.10185e-009
+t4: time=1.02028e-009 at 1.02028e-009
+transition_up: abs(t2-t1)=8.14889e-011
+transition_down: abs(t4-t3)=8.15753e-011
 
 Measurement "ratio" FAIL'ed
 
 
-Date: Tue Jun 08 14:47:13 2021
-Total elapsed time: 0.184 seconds.
+Date: Wed Jun 09 17:09:43 2021
+Total elapsed time: 0.097 seconds.
 
 tnom = 27
 temp = 27
 method = modified trap
-totiter = 2667
-traniter = 2649
-tranpoints = 1256
-accept = 1188
-rejected = 68
+totiter = 2669
+traniter = 2651
+tranpoints = 1258
+accept = 1189
+rejected = 69
 matrix size = 9
 fillins = 0
 solver = Normal
 Matrix Compiler1: 448 bytes object code size  0.1/0.1/[0.1]
-Matrix Compiler2: 817 bytes object code size  0.1/0.1/[0.1]
+Matrix Compiler2: off  [0.1]/0.1/0.1
 

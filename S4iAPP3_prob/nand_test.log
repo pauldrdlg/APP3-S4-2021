@@ -2,27 +2,27 @@ Circuit: * C:\Users\Utilisateur\Documents\GitHub Repository\APP3-S4-2021\S4iAPP3
 
 Direct Newton iteration for .op point succeeded.
 
-t1: time=3.00977e-009 at 3.00977e-009
-t2: time=3.06857e-009 at 3.06857e-009
-t3: time=2.08341e-009 at 2.08341e-009
-t4: time=2.01599e-009 at 2.01599e-009
-transition_up: abs(t2-t1)=5.87927e-011
-transition_down: abs(t4-t3)=6.74209e-011
+t1: time=3.00951e-009 at 3.00951e-009
+t2: time=3.06494e-009 at 3.06494e-009
+t3: time=2.07678e-009 at 2.07678e-009
+t4: time=2.01536e-009 at 2.01536e-009
+transition_up: abs(t2-t1)=5.54259e-011
+transition_down: abs(t4-t3)=6.14146e-011
 
 Measurement "ratio" FAIL'ed
 
 
-Date: Wed Jun 09 10:17:37 2021
-Total elapsed time: 0.155 seconds.
+Date: Wed Jun 09 17:10:35 2021
+Total elapsed time: 0.151 seconds.
 
 tnom = 27
 temp = 27
 method = modified trap
-totiter = 2770
-traniter = 2764
-tranpoints = 1310
-accept = 1227
-rejected = 83
+totiter = 2843
+traniter = 2837
+tranpoints = 1347
+accept = 1258
+rejected = 89
 matrix size = 8
 fillins = 0
 solver = Normal
